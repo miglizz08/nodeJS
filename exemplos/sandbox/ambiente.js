@@ -1,3 +1,5 @@
+process.loadEnvFile('.env');
+
 const obrigatorias = ['NOME_ALUNO', 'TURMA'];
 const ausentes = obrigatorias.filter((nome) =>!process.env[nome]?.trim());
 // (condição) ? true : flase
