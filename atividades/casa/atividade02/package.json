@@ -1,0 +1,13 @@
+{
+  "name": "atividade02-estoque-oficina",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Atividade 02 - Sistema de estoque de peças de uma oficina mecânica",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "exemplo-erro": "node index.js --erro",
+    "check": "node --check index.js && node --check src/estoque.js && node --check dados/pecas.js && node --check test/index.test.cjs",
+    "test": "node --test test/index.test.cjs"
+  }
+}
