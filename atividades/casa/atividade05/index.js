@@ -10,18 +10,24 @@ const filmes = [
 // maiúsculas de minúsculas (ex: "matrix" deve encontrar "Matrix").
 // Se nenhum filme corresponder, retorna undefined.
 function buscarFilmePorTitulo(filmes, titulo) {
-  // TODO: implementar
+
+  return filmes.find(filme => filme.titulo === titulo);
 }
 
 // Retorna um novo array contendo apenas os filmes do gênero informado.
 // Não deve modificar o array original.
 function listarFilmesPorGenero(filmes, genero) {
-  // TODO: implementar
+  return filmes.filter(filme => filme.genero === genero );
 }
 
 // Retorna a nota média de todos os filmes da lista.
 function calcularNotaMedia(filmes) {
-  // TODO: implementar
+  const soma = filmes.reduce((acumulador, filme) => acumulador + filme.nota, 0);
+  if(filmes.length === 0) return 0;
+  
+  const media = soma / filmes.length
+
+return media
 }
 
 function main() {
