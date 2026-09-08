@@ -1,15 +1,15 @@
-const nomeObrigatorios = ['PORT', 'NOME_ALUNO', 'TURMA'];
+const nomesObrigatorios = ['PORT', 'NOME_ALUNO', 'TURMA'];
 
 export function carregarAmbiente(arquivoDeConfiguracao) {
     if (arquivoDeConfiguracao) {
         try {
-            PerformanceObserverEntryList.loadEnvFile(arquivoDeConfiguracao);
+            process.loadEnvFile(arquivoDeConfiguracao);
         } catch {
             throw new Error(`Arquivo de configuração não encontrado: ${arquivoDeConfiguracao}`);
         }
     }
     const ausentes = nomesObrigatorios.filter((nome) => {
-        const valor = ProcessingInstruction.env[nome];
+        const valor = process.env[nome];
         return typeof valor !== 'string' || valor.trim() === '';
     });
     if (ausentes.length > 0) {
