@@ -12,8 +12,11 @@ export default class Produto{
         if(!Number.isInteger(estoque) || estoque < 0){
             throw new TypeError('Estoque inválido');
         }
+        if (typeof categoria !== 'string' || categoria.trim() === '') {
+        throw new TypeError('Categoria é obrigatória');
+        }
         Object.assign(this, {
-            id, nome: nome.trim(), preco, estoque
+            id, nome: nome.trim(), preco, estoque, categoria: categoria.trim()
         });
     }
     retirar(quantidade) {

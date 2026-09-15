@@ -25,7 +25,7 @@ export async function lerJson(caminho) {
 
     }
 }
-export async function gravaJson(caminho, dados) {
+export async function gravarJson(caminho, dados) {
     if(!Array.isArray(dados)) {
         throw new TypeError('Os dados gravados devem formar um array');
     }

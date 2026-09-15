@@ -1,5 +1,5 @@
 import Produto from "../models/Produto.js";
-import { gravaJson, lerJson } from "../storage/arquivo.Json.js";
+import { gravarJson, lerJson } from "../storage/arquivo.Json.js";
 
 export function criarCatalogoArquivo(caminho){
     async function listar() {
@@ -11,4 +11,17 @@ export function criarCatalogoArquivo(caminho){
         if (!produto) throw new Error(`Produto ${id} não encontrado.`);
         return produto;
     }
+    async function listarCategorias() {
+        const categorias = (await listar()).map(({categoria})=>categoria);
+        return [...new Set(categorias)];
+    }
+    async function criar(dados) {
+        const produtos = await listar();
+        const proximoId = Math.max(0, ...produtos.map(({id}) => id)) + 1;
+        const produto = new Produto({id:proximoId,...dados });
+        const atualizados = [...produtos, produto];
+        await gravarJson(caminho, atualizados);
+        return produto;
+    }
+    return {listar, buscarPorId, listarCategorias, criar};
 }

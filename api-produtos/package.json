@@ -4,11 +4,13 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js .env 1",
+    "start": "node app.js .env listar",
+    "buscar": "node app.js .env buscar",
+    "categorias": "node app.js .env categorias",
     "check":"node scripts/check.js",
     "diagnostico": "node app.js",
-    "produto-ausente": "node app.js .env 999",
-    "id-invalido": "node app.js .env abc"
+    "produto-ausente": "node app.js .env buscar 999",
+    "id-invalido": "node app.js .env buscar abc"
   },
   "keywords": [],
   "author": "",
