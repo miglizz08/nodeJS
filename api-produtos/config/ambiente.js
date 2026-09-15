@@ -29,7 +29,7 @@ export function exibirDiagnostico(configuracao) {
         turma: configuracao.turma,
         projeto: 'api-produtos',
         node: process.version,
-        sistema: `${process.plataform} ${process.arch}`,
+        sistema: `${process.platform} ${process.arch}`,
         diretorio: process.cwd(),
         portaConfigurada: configuracao.porta
     });

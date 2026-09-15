@@ -1,10 +1,10 @@
 const diagnostico = {
   node: process.version,
   diretorioAtual: process.cwd(),
-  plataforma:process.platform
+  platform:process.platform
 };
 
-if (!diagnostico.plataforma || !diagnostico.diretorioAtual) {
+if (!diagnostico.platform || !diagnostico.diretorioAtual) {
   console.error('PENDENTE: complete o diagnóstico do ambiente.');
   process.exitCode = 1;
 } else {

@@ -6,5 +6,5 @@ if (nomeInformado && turmaInformada) {
 
 } else{
     console.error('PENDENTE: valide nome e turma antes de confirmar a inscrição');
-        process.exitcode = 1;
+        process.exitCode = 1;
 };
