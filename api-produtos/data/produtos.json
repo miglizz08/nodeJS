@@ -5,19 +5,5 @@
     "preco": 120,
     "estoque": 4,
     "categoria": "Periféricos"
-  },
-  {
-    "id": 2,
-    "nome": "Monitor",
-    "preco": 120.9,
-    "estoque": 5,
-    "categoria": "Video"
-  },
-  {
-    "id": 3,
-    "nome": "Monitor",
-    "preco": 120.9,
-    "estoque": 5,
-    "categoria": "Video"
   }
 ]
