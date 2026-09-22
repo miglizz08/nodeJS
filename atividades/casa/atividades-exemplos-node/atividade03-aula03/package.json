@@ -1,0 +1,13 @@
+{
+  "name": "atividade03-aula03",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node index.js 10",
+    "desconto-invalido": "node index.js 150",
+    "desconto-total": "node index.js 100",
+    "check": "node --check index.js && node --check formatarMoeda.js && node --check Ingresso.js && node --check test/index.test.cjs",
+    "test": "node --test test/index.test.cjs"
+  }
+}

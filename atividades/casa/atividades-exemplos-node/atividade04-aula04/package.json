@@ -1,0 +1,13 @@
+{
+  "name": "atividade04-aula04",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node index.js 1",
+    "tarefa-ausente": "node index.js 99",
+    "arquivo-ausente": "node index.js 1 --arquivo-ausente",
+    "check": "node --check index.js && node --check test/index.test.cjs",
+    "test": "node --test test/index.test.cjs"
+  }
+}

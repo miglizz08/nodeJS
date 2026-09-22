@@ -1,0 +1,11 @@
+{
+  "name": "atividade02-aula02",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node index.js PED-01",
+    "pedido-ausente": "node index.js PED-99",
+    "check": "node --check index.js && node --check test/index.test.cjs",
+    "test": "node --test test/index.test.cjs"
+  }
+}

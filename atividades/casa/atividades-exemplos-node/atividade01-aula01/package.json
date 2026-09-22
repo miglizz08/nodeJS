@@ -1,0 +1,11 @@
+{
+  "name": "atividade01-aula01",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node index.js Ana 3DS-A",
+    "inscricao-invalida": "node index.js",
+    "check": "node --check index.js && node --check test/index.test.cjs",
+    "test": "node --test test/index.test.cjs"
+  }
+}
