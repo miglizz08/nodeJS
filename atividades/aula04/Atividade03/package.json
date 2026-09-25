@@ -1,0 +1,14 @@
+{
+  "name": "atividade-07-03",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "check": "node scripts/check.js",
+    "test": "node --test test/index.test.cjs"
+  },
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}

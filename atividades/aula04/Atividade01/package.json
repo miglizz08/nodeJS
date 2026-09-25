@@ -1,0 +1,14 @@
+{
+  "name": "atividade-06-saude-express",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "check": "node --check index.js && node --check test/index.test.cjs",
+    "test": "node --test test/index.test.cjs"
+  },
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
