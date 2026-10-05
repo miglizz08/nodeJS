@@ -5,13 +5,32 @@ const produtosNoPedido = [
 ];
 
 function calcularItensDoPedido(produtos) {
+  return produtos
+  .filter(produto => produto.quantidade > 0)
+  .map(produto => {
+    return {
+      nome: produto.nome,
+      subtotal: produto.preco * produto.quantidade
+    }
+  });
+
+}
+
+
   // TODO: devolva um NOVO array contendo apenas os produtos com
   // quantidade maior que 0. Cada item do novo array deve ter somente
   // duas propriedades: "nome" e "subtotal" (subtotal = preco * quantidade).
   // Não altere o array "produtos" recebido.
-}
+
 
 function consultarStatusPedido(codigo) {
+
+return new Promise((resolve, reject) => {
+  setTimeout(() => {
+    if(codigo === 'PED-01') resolve ({codigo, status: 'Em preparo'});
+    else reject(new Error(`Pedido ${codigo} não encontrado.`));
+  }, 80)
+});
   // TODO: devolva uma Promise.
   //
   // Depois de 80 milissegundos (use setTimeout dentro da Promise):

@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "nome": "Teclado",
+    "preco": 120,
+    "estoque": 4,
+    "categoria": "Periféricos"
+  },
+  {
+    "id": 2,
+    "nome": "Mouse",
+    "preco": 149,
+    "estoque": 8,
+    "categoria": "Periféricos"
+  },
+  {
+    "id": 3,
+    "nome": "Gabinete",
+    "preco": 349.9,
+    "estoque": 10,
+    "categoria": "Geral"
+  },
+  {
+    "id": 4,
+    "nome": "Gabinete Gamer",
+    "preco": 349.9,
+    "estoque": 8,
+    "categoria": "Geral"
+  },
+  {
+    "id": 5,
+    "nome": "teste",
+    "preco": 100,
+    "estoque": 2,
+    "categoria": "teste"
+  }
+]

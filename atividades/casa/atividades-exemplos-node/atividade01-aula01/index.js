@@ -1,14 +1,22 @@
 function montarDiagnostico() {
-  // TODO: retorne um objeto com três propriedades:
-  // - node       -> process.version
-  // - plataforma -> process.platform
-  // - diretorio  -> process.cwd()
+  return{
+    node:process.version,
+    plataforma:process.platform,
+    diretorio:process.cwd()
+  };
 }
 
 function validarInscricao(nome, turma) {
-  // TODO: retorne true somente se "nome" e "turma" forem strings e,
-  // depois de remover espaços das pontas (trim), não ficarem vazias.
-  // Caso contrário, retorne false.
+  if(typeof nome !== 'string' || nome.trim() === ''){
+    return false;
+  }
+  if(typeof turma !== 'string' || turma.trim() === ''){
+    return false;
+  } 
+  return true;
+    // TODO: retorne true somente se "nome" e "turma" forem strings e,
+    // depois de remover espaços das pontas (trim), não ficarem vazias.
+    // Caso contrário, retorne false.
 }
 
 function main() {

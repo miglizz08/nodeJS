@@ -1,7 +1,19 @@
+import { read } from 'node:fs';
 import { readFile, writeFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
 
 async function lerTarefas(caminho) {
+  try{
+    const texto = await readFile(caminho, 'utf8');
+    const dados = JSON.parse(texto);
+    if(!Array.isArray(dados)) 
+      throw new TypeError('Arquivo de tarefas inválido');
+      return dados;
+  }catch (erro){
+    if(erro.code === 'ENOENT') return [];
+    throw erro;
+  }
+  
   // TODO: leia o arquivo em "caminho" (utf8) e converta o texto para um
   // array de objetos usando JSON.parse.
   //
@@ -14,6 +26,13 @@ async function lerTarefas(caminho) {
 }
 
 function concluirTarefa(tarefas, id) {
+  if(!tarefas.some(t => t.id === id)) {
+    throw new Error(`Tarefa ${id} não encontrada.`);
+  }
+  return tarefas.map(t => {
+    if (t.id === id) return{...t, concluida: true};
+    return {...t};
+  });
   // TODO: devolva um NOVO array de tarefas (não altere o array recebido),
   // igual ao original, exceto pela tarefa cujo "id" seja igual ao
   // parâmetro "id", que deve ficar com "concluida" igual a true.
@@ -23,6 +42,8 @@ function concluirTarefa(tarefas, id) {
 }
 
 async function salvarTarefas(caminho, tarefas) {
+  const texto = JSON.stringify(tarefas, null, 2);
+  await writeFile(caminho, texto, 'utf-8');
   // TODO: converta "tarefas" para texto JSON, com indentação de 2 espaços,
   // e escreva esse texto no arquivo indicado por "caminho" (utf8).
 }

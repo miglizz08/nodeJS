@@ -1,5 +1,19 @@
 export default class Ingresso {
   constructor({ codigo, tipo, preco }) {
+
+    if(typeof codigo !== 'string' || codigo.trim() === '' ) {
+      throw new TypeError('Código inválido.');
+    }
+    if(typeof tipo !== 'string' || tipo.trim() === '') {
+      throw new TypeError('Tipo inválido.');
+    }
+    if (!Number.isFinite(preco) || preco <= 0) {
+      throw new TypeError('Preço inválido.');
+    }
+
+    Object.assign(this, {
+      codigo, tipo, preco
+    });
     // TODO: valide os dados recebidos e defina as propriedades da instância.
     //
     // Regras de validação (lance TypeError com a mensagem exata indicada):
@@ -11,6 +25,11 @@ export default class Ingresso {
   }
 
   aplicarDesconto(percentual) {
+    if(!Number.isFinite(percentual) || percentual <= 0 ||  percentual > 100){
+     throw new RangeError ('Percentual de desconto inválido.');
+    }
+    this.preco = this.preco - (this.preco * percentual / 100)
+
     // TODO: valide "percentual" e reduza o preço do ingresso.
     //
     // Regra de validação (lance RangeError com a mensagem exata indicada):
