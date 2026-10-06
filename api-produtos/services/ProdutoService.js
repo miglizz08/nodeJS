@@ -1,16 +1,16 @@
 import Produto from '../models/Produto.js';
 
-export function criarProdutoService({produtoModel }) {
+export function criarProdutoService({produtoModel}) {
     async function listar() {
         return produtoModel.listarTodos();
     }
     async function buscarPorId(idRecebido) {
         const id = Number(idRecebido);
-        if(!Number.isInteger(id) || id<=0){
-            throw new TypeError('ID deve ser um numero inteiro positivo');
+        if (!Number.isInteger(id) || id<=0) {
+            throw new TypeError('ID deve ser um número inteiro positivo')
         }
         const produto = await produtoModel.buscarPorId(id);
-        if(!produto) throw new Error(`Produto ${id} não encontrado`);
+        if (!produto) throw new Error(`Produto ${id} não encontrado`);
         return produto;
     }
     async function criar(dados) {
@@ -22,5 +22,5 @@ export function criarProdutoService({produtoModel }) {
             categoria: produto.categoria
         });
     }
-    return {listar, buscarPorId, criar};
+    return {listar, buscarPorId, criar}
 }
