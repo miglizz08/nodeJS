@@ -6,7 +6,7 @@ export function criarProdutoModel({pool}){
     async function buscarPorId(id) {
         const [linhas] = await pool.query ('SELECT * FROM produtos WHERE id = ?', [id]);
         if (linhas.legth === 0) return null;
-        return {...linha[0], preco: Number(linhas[0].preco)};
+        return {...linhas[0], preco: Number(linhas[0].preco)};
     }
     async function criar(produto) {
         const sql = 'INSERT INTO produtos (nome, preco, estoque, categoria) VALUES(?, ?, ?, ?)';
